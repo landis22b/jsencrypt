@@ -83,6 +83,7 @@ export default class JSEncrypt {
         try {
             return this.getKey().decrypt(b64tohex(str));
         } catch (ex) {
+            console.log(ex);
             return false;
         }
     }
@@ -100,6 +101,7 @@ export default class JSEncrypt {
         try {
             return hex2b64(this.getKey().encrypt(str));
         } catch (ex) {
+            console.log(ex);
             return false;
         }
     }
@@ -117,6 +119,7 @@ export default class JSEncrypt {
         try {
             return hex2b64(this.getKey().sign(str, digestMethod, digestName));
         } catch (ex) {
+            console.log(ex);
             return false;
         }
     }
@@ -134,6 +137,7 @@ export default class JSEncrypt {
         try {
             return this.getKey().verify(str, b64tohex(signature), digestMethod);
         } catch (ex) {
+            console.log(ex);
             return false;
         }
     }
